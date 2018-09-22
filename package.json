@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "buid": "tsc"
+    "buid": "tsc",
+    "link": "npm link",
+    "publish": "npm publish --access=public"
   },
   "repository": {
     "type": "git",
