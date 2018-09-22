@@ -3,6 +3,8 @@ import { getBadWords, setBadWords } from './src/config';
 
 
 class Index {
+    constructor(){}
+
     //todo: move this to src dir
     public findBadWords(val: string): string[] {
         const result: string[] = [];
