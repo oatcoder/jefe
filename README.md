@@ -1,2 +1,2 @@
-# @oat/jefe
+# @oatcoder/jefe
 a small library with potential.
