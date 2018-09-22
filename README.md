@@ -1,2 +1,2 @@
-# jefe
-npm module
+# @oat/jefe
+a small library with potential.
