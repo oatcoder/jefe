@@ -20,7 +20,7 @@ class Index {
 
     //todo: move this to src dir
     public hasBadWords(val: string): boolean {
-        return this.findBadWords(val).length !== 0;
+        return Index.prototype.findBadWords(val).length !== 0;
     }
 }
 
