@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "link": "npm link",
-    "publish": "npm publish --access=public"
+    "publish": "npm publish --access=public",
+    "test": "ts-node --project tsconfig.spec.json node_modules/jasmine/bin/jasmine"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/oatcoder/jefe#readme",
   "devDependencies": {
+    "@types/jasmine": "^2.8.8",
+    "jasmine": "^3.2.0",
+    "ts-node": "^7.0.1",
     "typescript": "^3.0.3"
   },
   "dependencies": {
