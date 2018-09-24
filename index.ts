@@ -1,29 +1,7 @@
-import { includes, each } from 'lodash';
-import { getBadWords, setBadWords } from './src/config';
+import * as Config  from './src/config';
+import * as BadWords from './src/badWords';
 
 
-class Index {
-    constructor(){}
-
-    //todo: move this to src dir
-    public findBadWords(val: string): string[] {
-        const result: string[] = [];
-
-        each(getBadWords(), bw => {
-            if (includes(val, bw)) {
-                result.push(bw);
-            }
-        });
-
-        return result;
-    }
-
-    //todo: move this to src dir
-    public hasBadWords(val: string): boolean {
-        return Index.prototype.findBadWords(val).length !== 0;
-    }
-}
-
-export const findBadWords = new Index().findBadWords;
-export const hasBadWords = new Index().hasBadWords;
-export const configBadWords = setBadWords;
+export const findBadWords = BadWords.default.findBadWords;
+export const hasBadWords = BadWords.default.hasBadWords;
+export const addBadWords = Config.default.setBadWords;

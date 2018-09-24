@@ -1,17 +1,22 @@
-import { each } from 'lodash';
-
 
 class Config {
-    private _badWords: string[] = ['crap', 'poop'];
+    private _badWords: string[] = [];
+
+    constructor() {
+        Config.prototype.setBadWords([]);
+    }
 
     public setBadWords(val: string[]) {
-
+        if (val.length == 0) {
+            Config.prototype._badWords = [];
+        } else {
+            Config.prototype._badWords.push(...val);
+        }
     }
 
     public getBadWords(): string[] {
-        return this._badWords;
+        return Config.prototype._badWords;
     }
 }
 
-export const setBadWords = new Config().setBadWords;
-export const getBadWords = new Config().getBadWords;
+export default new Config();
