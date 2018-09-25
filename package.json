@@ -8,7 +8,7 @@
     "build": "tsc",
     "link": "npm link",
     "publish": "npm publish --access=public",
-    "test": "ts-node --project tsconfig.spec.json node_modules/jasmine/bin/jasmine"
+    "test": "jasmine-ts \"src/**/*.spec.ts\""
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,8 @@
   "devDependencies": {
     "@types/jasmine": "^2.8.8",
     "jasmine": "^3.2.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jasmine-ts": "^0.2.1",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.3"
   },
