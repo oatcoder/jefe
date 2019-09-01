@@ -2,13 +2,12 @@
   "name": "@oatcoder/jefe",
   "version": "1.2.2",
   "description": "a small library with potential.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
   "scripts": {
-    "build": "tsc",
     "link": "npm link",
     "publish": "npm publish --access=public",
-    "test": "jasmine-ts \"src/**/*.spec.ts\""
+    "test": "jasmine-ts \"src/**/*.spec.ts\"",
+    "lint": "standard \"./src/*.js\""
   },
   "repository": {
     "type": "git",
@@ -22,15 +21,11 @@
   },
   "homepage": "https://github.com/oatcoder/jefe#readme",
   "devDependencies": {
-    "@types/jasmine": "^2.8.8",
     "jasmine": "^3.2.0",
     "jasmine-spec-reporter": "^4.2.1",
-    "jasmine-ts": "^0.2.1",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.0.3"
+    "standard": "^14.1.0"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.116",
     "lodash": "^4.17.15"
   }
 }
