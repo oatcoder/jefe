@@ -6,7 +6,7 @@
   "scripts": {
     "link": "npm link",
     "publish": "npm publish --access=public",
-    "test": "jasmine-ts \"src/**/*.spec.ts\"",
+    "test": "jasmine \"src/**/*.spec.js\"",
     "lint": "standard \"./src/*.js\""
   },
   "repository": {

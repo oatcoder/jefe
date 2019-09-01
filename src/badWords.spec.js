@@ -1,24 +1,27 @@
 /* global describe it beforeAll expect afterAll */
-import 'jasmine'
-import * as BadWord from './badWords'
-import * as Config from './config'
+const BadWord = require('./badWords')
+const Config = require('./config')
 
 describe('BadWords', () => {
   describe('hasBadWords', () => {
+    let config
+    let badWord
     beforeAll(() => {
-      Config.default.setBadWords(['crap'])
+      config = new Config()
+      badWord = new BadWord(config)
+      config.setBadWords(['crap'])
     })
 
     afterAll(() => {
-      Config.default.setBadWords([])
+      config.setBadWords([])
     })
 
     it('should return true when a string does not have bad words', () => {
-      expect(BadWord.default.hasBadWords('Thats crap! said the brown bird')).toBe(true)
+      expect(badWord.hasBadWords('Thats crap! said the brown bird')).toBe(true)
     })
 
     it('should return false when a string contains bad words', () => {
-      expect(BadWord.default.hasBadWords('The One With The Unagi')).toBe(false)
+      expect(badWord.hasBadWords('The One With The Unagi')).toBe(false)
     })
   })
 })
