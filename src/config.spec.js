@@ -1,9 +1,10 @@
-/* global describe it beforeAll expect */
+/* global describe it beforeEach */
+const assert = require('assert')
 const Config = require('./config')
 
-describe('Config', () => {
+describe.only('Config', () => {
   let config
-  beforeAll(() => {
+  beforeEach(() => {
     config = new Config()
     config.setBadWords([])
   })
@@ -11,23 +12,23 @@ describe('Config', () => {
   describe('setBadwords', () => {
     it('should add bad words', () => {
       config.setBadWords(['crap', 'poop'])
-      expect(config.getBadWords().length).toEqual(2)
+      assert.strictEqual(config.getBadWords().length, 2)
     })
 
     it('should clear bad words', () => {
       config.setBadWords([])
-      expect(config.getBadWords().length).toEqual(0)
+      assert.strictEqual(config.getBadWords().length, 0)
     })
   })
 
   describe('getBadWords', () => {
     it('should return an empty list if bad words were not set', () => {
-      expect(config.getBadWords().length).toEqual(0)
+      assert.strictEqual(config.getBadWords().length, 0)
     })
 
     it('should return a list of bad words previously set', () => {
       config.setBadWords(['crap', 'poop'])
-      expect(config.getBadWords().length).toEqual(2)
+      assert.strictEqual(config.getBadWords().length, 2)
     })
   })
 })

@@ -6,7 +6,7 @@
   "scripts": {
     "link": "npm link",
     "publish": "npm publish --access=public",
-    "test": "jasmine \"src/**/*.spec.js\"",
+    "test": "mocha \"src/*.spec.js\"",
     "lint": "standard \"./src/*.js\""
   },
   "repository": {
@@ -21,8 +21,7 @@
   },
   "homepage": "https://github.com/oatcoder/jefe#readme",
   "devDependencies": {
-    "jasmine": "^3.2.0",
-    "jasmine-spec-reporter": "^4.2.1",
+    "mocha": "^6.2.0",
     "standard": "^14.1.0"
   },
   "dependencies": {

@@ -1,4 +1,5 @@
-/* global describe it beforeAll expect afterAll */
+/* global describe it beforeEach afterEach */
+const assert = require('assert')
 const BadWord = require('./badWords')
 const Config = require('./config')
 
@@ -6,22 +7,22 @@ describe('BadWords', () => {
   describe('hasBadWords', () => {
     let config
     let badWord
-    beforeAll(() => {
+    beforeEach(() => {
       config = new Config()
       badWord = new BadWord(config)
       config.setBadWords(['crap'])
     })
 
-    afterAll(() => {
+    afterEach(() => {
       config.setBadWords([])
     })
 
     it('should return true when a string does not have bad words', () => {
-      expect(badWord.hasBadWords('Thats crap! said the brown bird')).toBe(true)
+      assert(badWord.hasBadWords('Thats crap! said the brown bird'))
     })
 
     it('should return false when a string contains bad words', () => {
-      expect(badWord.hasBadWords('The One With The Unagi')).toBe(false)
+      assert(!badWord.hasBadWords('The One With The Unagi'))
     })
   })
 })
