@@ -6,12 +6,12 @@ class BadWords {
   }
 
   findBadWords (val) {
-    const result = []
+    const result = new Set()
     const badWords = this._config.getBadWords()
 
-    _.each(badWords, bw => {
-      if (_.includes(val, bw)) {
-        result.push(bw)
+    badWords.forEach(word => {
+      if (_.includes(val, word)) {
+        result.add(word)
       }
     })
 
@@ -19,7 +19,7 @@ class BadWords {
   }
 
   hasBadWords (val) {
-    return this.findBadWords(val).length !== 0
+    return this.findBadWords(val).size !== 0
   }
 }
 

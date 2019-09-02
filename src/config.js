@@ -1,14 +1,14 @@
 class Config {
   constructor () {
-    this._badWords = []
+    this._badWords = new Set()
     this.setBadWords([])
   }
 
   setBadWords (val) {
     if (val.length === 0) {
-      this._badWords = []
+      this._badWords = new Set()
     } else {
-      this._badWords.push(...val)
+      val.forEach(word => this._badWords.add(word))
     }
   }
 
