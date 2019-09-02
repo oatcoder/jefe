@@ -1,5 +1,3 @@
-const _ = require('lodash')
-
 class BadWords {
   constructor (config) {
     this._config = config
@@ -10,7 +8,7 @@ class BadWords {
     const badWords = this._config.getBadWords()
 
     badWords.forEach(word => {
-      if (_.includes(val, word)) {
+      if (word.toUpperCase().includes(val.toUpperCase())) {
         result.add(word)
       }
     })
