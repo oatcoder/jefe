@@ -1,6 +1,6 @@
 {
   "name": "@oatcoder/jefe",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "a small library with potential.",
   "main": "index.js",
   "scripts": {
