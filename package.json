@@ -6,8 +6,9 @@
   "scripts": {
     "link": "npm link",
     "publish": "npm publish --access=public",
-    "test": "mocha \"src/*.spec.js\"",
-    "lint": "standard \"./src/*.js\""
+    "test": "mocha \"src/**/*.spec.js\"",
+    "lint": "standard \"./src/**/*.js\"",
+    "test:html": "jest \"./src/html/*.*.spec.js\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/oatcoder/jefe#readme",
   "devDependencies": {
+    "jest": "^24.9.0",
     "mocha": "^6.2.0",
     "standard": "^14.1.0"
   },
