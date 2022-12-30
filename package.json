@@ -23,7 +23,7 @@
   "homepage": "https://github.com/oatcoder/jefe#readme",
   "devDependencies": {
     "jest": "^24.9.0",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "standard": "^14.1.0"
   },
   "dependencies": {}
